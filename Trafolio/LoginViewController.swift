@@ -1,14 +1,6 @@
-//
-//  ViewController.swift
-//  Trafolio
-//
-//  Created by Peter Chen on 2016-03-11.
-//  Copyright © 2016 CoreDev. All rights reserved.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
