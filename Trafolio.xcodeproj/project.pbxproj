@@ -52,6 +52,7 @@
 		A20A52871C93CF1C0025EDF6 /* TrafolioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafolioUITests.swift; sourceTree = "<group>"; };
 		A20A52891C93CF1C0025EDF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A20A52971C93E01B0025EDF6 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		A20A52991C93EF7B0025EDF6 /* Trafolio-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Trafolio-Bridging-Header.h"; sourceTree = "<group>"; };
 		EF987680B24268D8F217C52D /* Pods_Trafolio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trafolio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -146,6 +147,7 @@
 				A20A526E1C93CF1C0025EDF6 /* Assets.xcassets */,
 				A20A52701C93CF1C0025EDF6 /* LaunchScreen.storyboard */,
 				A20A52731C93CF1C0025EDF6 /* Info.plist */,
+				A20A52991C93EF7B0025EDF6 /* Trafolio-Bridging-Header.h */,
 			);
 			name = SupportingFiles;
 			sourceTree = "<group>";
@@ -494,9 +496,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Trafolio/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CoreDev.Trafolio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Trafolio/Trafolio-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -506,9 +510,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Trafolio/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CoreDev.Trafolio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Trafolio/Trafolio-Bridging-Header.h";
 			};
 			name = Release;
 		};
