@@ -14,6 +14,7 @@
 		A20A52721C93CF1C0025EDF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A20A52701C93CF1C0025EDF6 /* LaunchScreen.storyboard */; };
 		A20A527D1C93CF1C0025EDF6 /* TrafolioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A527C1C93CF1C0025EDF6 /* TrafolioTests.swift */; };
 		A20A52881C93CF1C0025EDF6 /* TrafolioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52871C93CF1C0025EDF6 /* TrafolioUITests.swift */; };
+		A20A52981C93E01B0025EDF6 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52971C93E01B0025EDF6 /* SignupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A20A52831C93CF1C0025EDF6 /* TrafolioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrafolioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20A52871C93CF1C0025EDF6 /* TrafolioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafolioUITests.swift; sourceTree = "<group>"; };
 		A20A52891C93CF1C0025EDF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A20A52971C93E01B0025EDF6 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +99,8 @@
 		A20A52661C93CF1C0025EDF6 /* Trafolio */ = {
 			isa = PBXGroup;
 			children = (
+				A20A52961C93E0080025EDF6 /* ViewControllers */,
 				A20A52671C93CF1C0025EDF6 /* AppDelegate.swift */,
-				A20A52691C93CF1C0025EDF6 /* LoginViewController.swift */,
 				A20A526B1C93CF1C0025EDF6 /* Main.storyboard */,
 				A20A52951C93D2CC0025EDF6 /* SupportingFiles */,
 			);
@@ -131,6 +133,15 @@
 				A20A52731C93CF1C0025EDF6 /* Info.plist */,
 			);
 			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		A20A52961C93E0080025EDF6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A20A52691C93CF1C0025EDF6 /* LoginViewController.swift */,
+				A20A52971C93E01B0025EDF6 /* SignupViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A20A52981C93E01B0025EDF6 /* SignupViewController.swift in Sources */,
 				A20A526A1C93CF1C0025EDF6 /* LoginViewController.swift in Sources */,
 				A20A52681C93CF1C0025EDF6 /* AppDelegate.swift in Sources */,
 			);
