@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BFD1C6C2CA593772F7FE388 /* Pods_Trafolio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF987680B24268D8F217C52D /* Pods_Trafolio.framework */; };
 		A20A52681C93CF1C0025EDF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52671C93CF1C0025EDF6 /* AppDelegate.swift */; };
 		A20A526A1C93CF1C0025EDF6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52691C93CF1C0025EDF6 /* LoginViewController.swift */; };
 		A20A526D1C93CF1C0025EDF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A20A526B1C93CF1C0025EDF6 /* Main.storyboard */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		72570FD4D7DFECEE6EE24190 /* Pods-Trafolio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trafolio.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trafolio/Pods-Trafolio.release.xcconfig"; sourceTree = "<group>"; };
+		8EA29347D50C0782025F3D29 /* Pods-Trafolio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trafolio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trafolio/Pods-Trafolio.debug.xcconfig"; sourceTree = "<group>"; };
 		A20A52641C93CF1C0025EDF6 /* Trafolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trafolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20A52671C93CF1C0025EDF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A20A52691C93CF1C0025EDF6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		A20A52871C93CF1C0025EDF6 /* TrafolioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafolioUITests.swift; sourceTree = "<group>"; };
 		A20A52891C93CF1C0025EDF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A20A52971C93E01B0025EDF6 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		EF987680B24268D8F217C52D /* Pods_Trafolio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trafolio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BFD1C6C2CA593772F7FE388 /* Pods_Trafolio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		644C923820A6E45F211B9D61 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF987680B24268D8F217C52D /* Pods_Trafolio.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A20A525B1C93CF1C0025EDF6 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +96,8 @@
 				A20A527B1C93CF1C0025EDF6 /* TrafolioTests */,
 				A20A52861C93CF1C0025EDF6 /* TrafolioUITests */,
 				A20A52651C93CF1C0025EDF6 /* Products */,
+				B6E1FD470F52E97F139C5410 /* Pods */,
+				644C923820A6E45F211B9D61 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,6 +159,15 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		B6E1FD470F52E97F139C5410 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8EA29347D50C0782025F3D29 /* Pods-Trafolio.debug.xcconfig */,
+				72570FD4D7DFECEE6EE24190 /* Pods-Trafolio.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A20A528C1C93CF1C0025EDF6 /* Build configuration list for PBXNativeTarget "Trafolio" */;
 			buildPhases = (
+				A0AC44E7D497B2F4F76F697B /* Check Pods Manifest.lock */,
 				A20A52601C93CF1C0025EDF6 /* Sources */,
 				A20A52611C93CF1C0025EDF6 /* Frameworks */,
 				A20A52621C93CF1C0025EDF6 /* Resources */,
+				0DD1FA89E93119DFEEA9DA4C /* Embed Pods Frameworks */,
+				788DEF75039AF3CABED934F2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,6 +296,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DD1FA89E93119DFEEA9DA4C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Trafolio/Pods-Trafolio-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		788DEF75039AF3CABED934F2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Trafolio/Pods-Trafolio-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0AC44E7D497B2F4F76F697B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A20A52601C93CF1C0025EDF6 /* Sources */ = {
@@ -415,6 +490,7 @@
 		};
 		A20A528D1C93CF1C0025EDF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EA29347D50C0782025F3D29 /* Pods-Trafolio.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Trafolio/Info.plist;
@@ -426,6 +502,7 @@
 		};
 		A20A528E1C93CF1C0025EDF6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72570FD4D7DFECEE6EE24190 /* Pods-Trafolio.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Trafolio/Info.plist;
@@ -502,6 +579,7 @@
 				A20A528E1C93CF1C0025EDF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A20A528F1C93CF1C0025EDF6 /* Build configuration list for PBXNativeTarget "TrafolioTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +588,7 @@
 				A20A52911C93CF1C0025EDF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A20A52921C93CF1C0025EDF6 /* Build configuration list for PBXNativeTarget "TrafolioUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +597,7 @@
 				A20A52941C93CF1C0025EDF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
