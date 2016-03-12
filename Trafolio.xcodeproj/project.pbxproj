@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A20A52681C93CF1C0025EDF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52671C93CF1C0025EDF6 /* AppDelegate.swift */; };
+		A20A526A1C93CF1C0025EDF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52691C93CF1C0025EDF6 /* ViewController.swift */; };
+		A20A526D1C93CF1C0025EDF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A20A526B1C93CF1C0025EDF6 /* Main.storyboard */; };
+		A20A526F1C93CF1C0025EDF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A20A526E1C93CF1C0025EDF6 /* Assets.xcassets */; };
+		A20A52721C93CF1C0025EDF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A20A52701C93CF1C0025EDF6 /* LaunchScreen.storyboard */; };
+		A20A527D1C93CF1C0025EDF6 /* TrafolioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A527C1C93CF1C0025EDF6 /* TrafolioTests.swift */; };
+		A20A52881C93CF1C0025EDF6 /* TrafolioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52871C93CF1C0025EDF6 /* TrafolioUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A20A52791C93CF1C0025EDF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A20A525C1C93CF1C0025EDF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A20A52631C93CF1C0025EDF6;
+			remoteInfo = Trafolio;
+		};
+		A20A52841C93CF1C0025EDF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A20A525C1C93CF1C0025EDF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A20A52631C93CF1C0025EDF6;
+			remoteInfo = Trafolio;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A20A52641C93CF1C0025EDF6 /* Trafolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trafolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20A52671C93CF1C0025EDF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A20A52691C93CF1C0025EDF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A20A526C1C93CF1C0025EDF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A20A526E1C93CF1C0025EDF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A20A52711C93CF1C0025EDF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A20A52731C93CF1C0025EDF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A20A52781C93CF1C0025EDF6 /* TrafolioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrafolioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20A527C1C93CF1C0025EDF6 /* TrafolioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafolioTests.swift; sourceTree = "<group>"; };
+		A20A527E1C93CF1C0025EDF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A20A52831C93CF1C0025EDF6 /* TrafolioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrafolioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20A52871C93CF1C0025EDF6 /* TrafolioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafolioUITests.swift; sourceTree = "<group>"; };
+		A20A52891C93CF1C0025EDF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A20A52611C93CF1C0025EDF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A20A52751C93CF1C0025EDF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A20A52801C93CF1C0025EDF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A20A525B1C93CF1C0025EDF6 = {
+			isa = PBXGroup;
+			children = (
+				A20A52661C93CF1C0025EDF6 /* Trafolio */,
+				A20A527B1C93CF1C0025EDF6 /* TrafolioTests */,
+				A20A52861C93CF1C0025EDF6 /* TrafolioUITests */,
+				A20A52651C93CF1C0025EDF6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A20A52651C93CF1C0025EDF6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A20A52641C93CF1C0025EDF6 /* Trafolio.app */,
+				A20A52781C93CF1C0025EDF6 /* TrafolioTests.xctest */,
+				A20A52831C93CF1C0025EDF6 /* TrafolioUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A20A52661C93CF1C0025EDF6 /* Trafolio */ = {
+			isa = PBXGroup;
+			children = (
+				A20A52671C93CF1C0025EDF6 /* AppDelegate.swift */,
+				A20A52691C93CF1C0025EDF6 /* ViewController.swift */,
+				A20A526B1C93CF1C0025EDF6 /* Main.storyboard */,
+				A20A526E1C93CF1C0025EDF6 /* Assets.xcassets */,
+				A20A52701C93CF1C0025EDF6 /* LaunchScreen.storyboard */,
+				A20A52731C93CF1C0025EDF6 /* Info.plist */,
+			);
+			path = Trafolio;
+			sourceTree = "<group>";
+		};
+		A20A527B1C93CF1C0025EDF6 /* TrafolioTests */ = {
+			isa = PBXGroup;
+			children = (
+				A20A527C1C93CF1C0025EDF6 /* TrafolioTests.swift */,
+				A20A527E1C93CF1C0025EDF6 /* Info.plist */,
+			);
+			path = TrafolioTests;
+			sourceTree = "<group>";
+		};
+		A20A52861C93CF1C0025EDF6 /* TrafolioUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A20A52871C93CF1C0025EDF6 /* TrafolioUITests.swift */,
+				A20A52891C93CF1C0025EDF6 /* Info.plist */,
+			);
+			path = TrafolioUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A20A52631C93CF1C0025EDF6 /* Trafolio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A20A528C1C93CF1C0025EDF6 /* Build configuration list for PBXNativeTarget "Trafolio" */;
+			buildPhases = (
+				A20A52601C93CF1C0025EDF6 /* Sources */,
+				A20A52611C93CF1C0025EDF6 /* Frameworks */,
+				A20A52621C93CF1C0025EDF6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Trafolio;
+			productName = Trafolio;
+			productReference = A20A52641C93CF1C0025EDF6 /* Trafolio.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A20A52771C93CF1C0025EDF6 /* TrafolioTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A20A528F1C93CF1C0025EDF6 /* Build configuration list for PBXNativeTarget "TrafolioTests" */;
+			buildPhases = (
+				A20A52741C93CF1C0025EDF6 /* Sources */,
+				A20A52751C93CF1C0025EDF6 /* Frameworks */,
+				A20A52761C93CF1C0025EDF6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A20A527A1C93CF1C0025EDF6 /* PBXTargetDependency */,
+			);
+			name = TrafolioTests;
+			productName = TrafolioTests;
+			productReference = A20A52781C93CF1C0025EDF6 /* TrafolioTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A20A52821C93CF1C0025EDF6 /* TrafolioUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A20A52921C93CF1C0025EDF6 /* Build configuration list for PBXNativeTarget "TrafolioUITests" */;
+			buildPhases = (
+				A20A527F1C93CF1C0025EDF6 /* Sources */,
+				A20A52801C93CF1C0025EDF6 /* Frameworks */,
+				A20A52811C93CF1C0025EDF6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A20A52851C93CF1C0025EDF6 /* PBXTargetDependency */,
+			);
+			name = TrafolioUITests;
+			productName = TrafolioUITests;
+			productReference = A20A52831C93CF1C0025EDF6 /* TrafolioUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A20A525C1C93CF1C0025EDF6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = CoreDev;
+				TargetAttributes = {
+					A20A52631C93CF1C0025EDF6 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					A20A52771C93CF1C0025EDF6 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = A20A52631C93CF1C0025EDF6;
+					};
+					A20A52821C93CF1C0025EDF6 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = A20A52631C93CF1C0025EDF6;
+					};
+				};
+			};
+			buildConfigurationList = A20A525F1C93CF1C0025EDF6 /* Build configuration list for PBXProject "Trafolio" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A20A525B1C93CF1C0025EDF6;
+			productRefGroup = A20A52651C93CF1C0025EDF6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A20A52631C93CF1C0025EDF6 /* Trafolio */,
+				A20A52771C93CF1C0025EDF6 /* TrafolioTests */,
+				A20A52821C93CF1C0025EDF6 /* TrafolioUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A20A52621C93CF1C0025EDF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A20A52721C93CF1C0025EDF6 /* LaunchScreen.storyboard in Resources */,
+				A20A526F1C93CF1C0025EDF6 /* Assets.xcassets in Resources */,
+				A20A526D1C93CF1C0025EDF6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A20A52761C93CF1C0025EDF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A20A52811C93CF1C0025EDF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A20A52601C93CF1C0025EDF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A20A526A1C93CF1C0025EDF6 /* ViewController.swift in Sources */,
+				A20A52681C93CF1C0025EDF6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A20A52741C93CF1C0025EDF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A20A527D1C93CF1C0025EDF6 /* TrafolioTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A20A527F1C93CF1C0025EDF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A20A52881C93CF1C0025EDF6 /* TrafolioUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A20A527A1C93CF1C0025EDF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A20A52631C93CF1C0025EDF6 /* Trafolio */;
+			targetProxy = A20A52791C93CF1C0025EDF6 /* PBXContainerItemProxy */;
+		};
+		A20A52851C93CF1C0025EDF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A20A52631C93CF1C0025EDF6 /* Trafolio */;
+			targetProxy = A20A52841C93CF1C0025EDF6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A20A526B1C93CF1C0025EDF6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A20A526C1C93CF1C0025EDF6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A20A52701C93CF1C0025EDF6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A20A52711C93CF1C0025EDF6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A20A528A1C93CF1C0025EDF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A20A528B1C93CF1C0025EDF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A20A528D1C93CF1C0025EDF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Trafolio/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CoreDev.Trafolio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A20A528E1C93CF1C0025EDF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Trafolio/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CoreDev.Trafolio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A20A52901C93CF1C0025EDF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TrafolioTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CoreDev.TrafolioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trafolio.app/Trafolio";
+			};
+			name = Debug;
+		};
+		A20A52911C93CF1C0025EDF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TrafolioTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CoreDev.TrafolioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trafolio.app/Trafolio";
+			};
+			name = Release;
+		};
+		A20A52931C93CF1C0025EDF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TrafolioUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CoreDev.TrafolioUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Trafolio;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		A20A52941C93CF1C0025EDF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TrafolioUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CoreDev.TrafolioUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Trafolio;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A20A525F1C93CF1C0025EDF6 /* Build configuration list for PBXProject "Trafolio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A20A528A1C93CF1C0025EDF6 /* Debug */,
+				A20A528B1C93CF1C0025EDF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A20A528C1C93CF1C0025EDF6 /* Build configuration list for PBXNativeTarget "Trafolio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A20A528D1C93CF1C0025EDF6 /* Debug */,
+				A20A528E1C93CF1C0025EDF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A20A528F1C93CF1C0025EDF6 /* Build configuration list for PBXNativeTarget "TrafolioTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A20A52901C93CF1C0025EDF6 /* Debug */,
+				A20A52911C93CF1C0025EDF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A20A52921C93CF1C0025EDF6 /* Build configuration list for PBXNativeTarget "TrafolioUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A20A52931C93CF1C0025EDF6 /* Debug */,
+				A20A52941C93CF1C0025EDF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A20A525C1C93CF1C0025EDF6 /* Project object */;
+}
