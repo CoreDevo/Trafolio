@@ -51,8 +51,9 @@ class UploadPhotoController: UIViewController {
 		let filename = self.filenameTF.text ?? "0.jpg"
 		let portfolioname = self.protfolioname
 		let	description = self.descriptionView.text
+		if self.photo == nil {return}
 		guard let data = UIImageJPEGRepresentation(self.photo!, 0.8) else { return }
-		let date = self.asset.creationDate ?? NSDate()
+		let date = NSDate()
 		PhotoUploadManager.sharedInstance().sendPhoto(data, filename: filename, portfolioName: portfolioname, description: description, location:self.location, date: date) {(succeed) -> () in
 			NSLog("Result: \(succeed)")
 			NSNotificationCenter.defaultCenter().postNotificationName(TrafolioUploadCompletedNotification, object: self)

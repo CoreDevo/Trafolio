@@ -35,6 +35,7 @@ class PortfolioMapManager: NSObject {
 			let newPortfolio = Portfolio(username: username, name: name, num_pic:  num_pic, description: description, isPublic: isPublic, finished: finished, date: date)
 			result.append(newPortfolio)
 		}
+		result.sortInPlace { $0 < $1 }
 		return result
 	}
 }

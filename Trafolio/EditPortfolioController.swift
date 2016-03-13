@@ -18,6 +18,8 @@ class EditPortfolioController: UIViewController, MKMapViewDelegate, UIGestureRec
 	private var mapTapRecognizer: UIGestureRecognizer!
 	private var locationManager = CLLocationManager()
 
+	private var firstTimeOpen = true
+
 	private var manager: AFHTTPSessionManager {
 		let manager = (UIApplication.sharedApplication().delegate as! AppDelegate).httpManager
 		manager.requestSerializer.setValue(AUTH_CODE, forHTTPHeaderField: "auth_code")
@@ -49,8 +51,11 @@ class EditPortfolioController: UIViewController, MKMapViewDelegate, UIGestureRec
 
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
-		if let loc = self.locationManager.location {
-			self.centerMapOnLocation(loc, animated: false)
+		if self.firstTimeOpen {
+			if let loc = self.locationManager.location {
+				self.centerMapOnLocation(loc, animated: false)
+				self.firstTimeOpen = false
+			}
 		}
 	}
 
@@ -81,6 +86,14 @@ class EditPortfolioController: UIViewController, MKMapViewDelegate, UIGestureRec
 	func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
 		let loc = view.annotation!.coordinate
 		self.mapAddPhoto(CLLocation(latitude: loc.latitude, longitude: loc.longitude))
+	}
+
+	func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+		let renderer = MKPolylineRenderer(overlay: overlay)
+		renderer.strokeColor = UIColor(red: 0, green: 0, blue: 1, alpha: 0.7)
+		renderer.lineWidth = 4
+		renderer.lineDashPattern = [2, 7]
+		return renderer
 	}
 
 	// MARK: GestureRecognizer
@@ -198,12 +211,19 @@ class EditPortfolioController: UIViewController, MKMapViewDelegate, UIGestureRec
 
 	private func constructMapAnnotations(nodes: [PortfolioNode]) {
 		self.mapView.removeAnnotations(self.mapView.annotations)
+		self.mapView.removeOverlays(self.mapView.overlays)
 		self.currentCreateAnnotation = nil
 		for node in nodes {
 			let annotation = TFPointAnnotation(type: .Show)
 			annotation.coordinate = node.location.coordinate
 			annotation.node = node
 			self.mapView.addAnnotation(annotation)
+		}
+		let sortedNode = nodes.sort { $0 < $1 }
+		var sortedCoords = sortedNode.map{ $0.location.coordinate }
+		if sortedCoords.count > 1 {
+			let line = MKGeodesicPolyline(coordinates: &sortedCoords, count: sortedCoords.count)
+			self.mapView.addOverlay(line)
 		}
 	}
 }

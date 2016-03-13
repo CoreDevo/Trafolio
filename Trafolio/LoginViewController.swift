@@ -25,67 +25,6 @@ class LoginViewController: UIViewController {
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)		
 	}
 
-//	func test() {
-//		let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
-//		let filepath = path + "/test.jpg"
-//		let fileURL = NSURL(fileURLWithPath: filepath)
-//
-//
-//		let image = UIImage(named: "test")!
-//		let imageData = UIImageJPEGRepresentation(image, 1)
-//		//let params = ["image" : imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)]
-//		let urlManager = AFURLSessionManager(sessionConfiguration: NSURLSessionConfiguration.defaultSessionConfiguration())
-//		let request = NSMutableURLRequest(URL: NSURL(string: SERVER_URL + "/images.php")!)
-//		request.HTTPMethod = "POST"
-//		let params = ["username":"test", "imageDescription":"A test Image"]
-//		let boundary = self.generateBoundaryString()
-//		request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-//		request.HTTPBody = self.createBodyWithParameters(params, filePathKey: "file", imageDataKey: imageData!, boundary: boundary)
-//		let task = urlManager.dataTaskWithRequest(request) { (data, response, error) -> Void in
-//			if error != nil {
-//				print("error=\(error)")
-//				return
-//			}
-//
-//			// You can print out response object
-//			print("******* response = \(response)")
-//
-//		}
-//		task.resume()
-//	}
-//
-//	func generateBoundaryString() -> String {
-//		return "Boundary-\(NSUUID().UUIDString)"
-//	}
-//
-//	func createBodyWithParameters(parameters: [String: String]?, filePathKey: String?, imageDataKey: NSData, boundary: String) -> NSData {
-//		var body = NSMutableData();
-//
-//		if parameters != nil {
-//			for (key, value) in parameters! {
-//				body.appendString("--\(boundary)\r\n")
-//				body.appendString("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
-//				body.appendString("\(value)\r\n")
-//			}
-//		}
-//
-//		let filename = "user-profile.jpg"
-//
-//		let mimetype = "image/jpg"
-//
-//		body.appendString("--\(boundary)\r\n")
-//		body.appendString("Content-Disposition: form-data; name=\"\(filePathKey!)\"; filename=\"\(filename)\"\r\n")
-//		body.appendString("Content-Type: \(mimetype)\r\n\r\n")
-//		body.appendData(imageDataKey)
-//		body.appendString("\r\n")
-//
-//
-//
-//		body.appendString("--\(boundary)--\r\n")
-//
-//		return body
-//	}
-
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
@@ -104,6 +43,8 @@ class LoginViewController: UIViewController {
 			self.loginBox.alpha = 1
 			self.logoImage.alpha = 1
 		}
+		self.usernameTextField.text = nil
+		self.passwordTextField.text = nil
 	}
 
 	override func viewWillDisappear(animated: Bool) {

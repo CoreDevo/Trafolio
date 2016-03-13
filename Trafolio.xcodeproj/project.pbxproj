@@ -33,6 +33,7 @@
 		A20A52C21C95248D0025EDF6 /* PortfolioNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52C11C95248D0025EDF6 /* PortfolioNode.swift */; };
 		A20A52C41C9534B40025EDF6 /* PortfolioMapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52C31C9534B40025EDF6 /* PortfolioMapManager.swift */; };
 		A20A52C61C9537010025EDF6 /* TFPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52C51C9537010025EDF6 /* TFPointAnnotation.swift */; };
+		A2DBC0F61C95903C00DB0BD0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DBC0F51C95903C00DB0BD0 /* SettingsViewController.swift */; };
 		A2EDAE221C954F2000BF046A /* TFAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2EDAE211C954F2000BF046A /* TFAnnotationView.xib */; };
 		A2EDAE241C954F2900BF046A /* TFAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDAE231C954F2900BF046A /* TFAnnotationView.swift */; };
 		A2EDAE261C9555CC00BF046A /* PortfolioTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDAE251C9555CC00BF046A /* PortfolioTableViewDelegate.swift */; };
@@ -91,6 +92,7 @@
 		A20A52C11C95248D0025EDF6 /* PortfolioNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioNode.swift; sourceTree = "<group>"; };
 		A20A52C31C9534B40025EDF6 /* PortfolioMapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioMapManager.swift; sourceTree = "<group>"; };
 		A20A52C51C9537010025EDF6 /* TFPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFPointAnnotation.swift; sourceTree = "<group>"; };
+		A2DBC0F51C95903C00DB0BD0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A2EDAE211C954F2000BF046A /* TFAnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TFAnnotationView.xib; sourceTree = "<group>"; };
 		A2EDAE231C954F2900BF046A /* TFAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFAnnotationView.swift; sourceTree = "<group>"; };
 		A2EDAE251C9555CC00BF046A /* PortfolioTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioTableViewDelegate.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				A20A52B61C94E7460025EDF6 /* UploadPhotoController.swift */,
 				A20A52BA1C94F42E0025EDF6 /* BatchUploadController.swift */,
 				A2EDAE271C95675D00BF046A /* ViewPortfolioController.swift */,
+				A2DBC0F51C95903C00DB0BD0 /* SettingsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				A2EDAE261C9555CC00BF046A /* PortfolioTableViewDelegate.swift in Sources */,
 				A20A52B11C94B0970025EDF6 /* PortfolioCell.swift in Sources */,
 				A20A52A41C94209B0025EDF6 /* MainTabBarController.swift in Sources */,
+				A2DBC0F61C95903C00DB0BD0 /* SettingsViewController.swift in Sources */,
 				A2EDAE281C95675D00BF046A /* ViewPortfolioController.swift in Sources */,
 				A20A526A1C93CF1C0025EDF6 /* LoginViewController.swift in Sources */,
 				A20A52681C93CF1C0025EDF6 /* AppDelegate.swift in Sources */,

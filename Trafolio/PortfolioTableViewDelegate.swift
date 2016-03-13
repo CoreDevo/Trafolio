@@ -1,16 +1,5 @@
 import UIKit
 
-
-struct Portfolio {
-	var username: String
-	var name: String
-	var num_pic: Int
-	var description: String?
-	var isPublic: Bool
-	var finished: Bool
-	var date: NSDate
-}
-
 class PortfolioTableViewDelegate: NSObject, UITableViewDataSource, UITableViewDelegate {
 	var tableView: UITableView!
 	var portfolios: [Portfolio] = []
@@ -48,8 +37,10 @@ class PortfolioTableViewDelegate: NSObject, UITableViewDataSource, UITableViewDe
 
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		self.selectedPortfolio = self.portfolios[indexPath.row]
-		if let vc = self.parentVC {
+		if let vc = self.parentVC as? MeViewController {
 			vc.performSegueWithIdentifier("MeOpenView", sender: vc)
+		} else if let vc = self.parentVC as? DashboardController {
+			vc.performSegueWithIdentifier("DashboardOpenView", sender: vc)
 		}
 	}
 }
