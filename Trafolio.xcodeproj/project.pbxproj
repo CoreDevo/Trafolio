@@ -30,6 +30,13 @@
 		A20A52BB1C94F42E0025EDF6 /* BatchUploadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52BA1C94F42E0025EDF6 /* BatchUploadController.swift */; };
 		A20A52BD1C94F8CC0025EDF6 /* UploadPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A20A52BC1C94F8CC0025EDF6 /* UploadPhotoCell.xib */; };
 		A20A52BF1C94F8D80025EDF6 /* UploadPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52BE1C94F8D80025EDF6 /* UploadPhotoCell.swift */; };
+		A20A52C21C95248D0025EDF6 /* PortfolioNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52C11C95248D0025EDF6 /* PortfolioNode.swift */; };
+		A20A52C41C9534B40025EDF6 /* PortfolioMapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52C31C9534B40025EDF6 /* PortfolioMapManager.swift */; };
+		A20A52C61C9537010025EDF6 /* TFPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52C51C9537010025EDF6 /* TFPointAnnotation.swift */; };
+		A2EDAE221C954F2000BF046A /* TFAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2EDAE211C954F2000BF046A /* TFAnnotationView.xib */; };
+		A2EDAE241C954F2900BF046A /* TFAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDAE231C954F2900BF046A /* TFAnnotationView.swift */; };
+		A2EDAE261C9555CC00BF046A /* PortfolioTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDAE251C9555CC00BF046A /* PortfolioTableViewDelegate.swift */; };
+		A2EDAE281C95675D00BF046A /* ViewPortfolioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDAE271C95675D00BF046A /* ViewPortfolioController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +88,13 @@
 		A20A52BA1C94F42E0025EDF6 /* BatchUploadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatchUploadController.swift; sourceTree = "<group>"; };
 		A20A52BC1C94F8CC0025EDF6 /* UploadPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UploadPhotoCell.xib; sourceTree = "<group>"; };
 		A20A52BE1C94F8D80025EDF6 /* UploadPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadPhotoCell.swift; sourceTree = "<group>"; };
+		A20A52C11C95248D0025EDF6 /* PortfolioNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioNode.swift; sourceTree = "<group>"; };
+		A20A52C31C9534B40025EDF6 /* PortfolioMapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioMapManager.swift; sourceTree = "<group>"; };
+		A20A52C51C9537010025EDF6 /* TFPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFPointAnnotation.swift; sourceTree = "<group>"; };
+		A2EDAE211C954F2000BF046A /* TFAnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TFAnnotationView.xib; sourceTree = "<group>"; };
+		A2EDAE231C954F2900BF046A /* TFAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFAnnotationView.swift; sourceTree = "<group>"; };
+		A2EDAE251C9555CC00BF046A /* PortfolioTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioTableViewDelegate.swift; sourceTree = "<group>"; };
+		A2EDAE271C95675D00BF046A /* ViewPortfolioController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPortfolioController.swift; sourceTree = "<group>"; };
 		EF987680B24268D8F217C52D /* Pods_Trafolio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trafolio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -122,8 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				A20A52661C93CF1C0025EDF6 /* Trafolio */,
-				A20A527B1C93CF1C0025EDF6 /* TrafolioTests */,
 				A20A52861C93CF1C0025EDF6 /* TrafolioUITests */,
+				A20A527B1C93CF1C0025EDF6 /* TrafolioTests */,
 				A20A52651C93CF1C0025EDF6 /* Products */,
 				B6E1FD470F52E97F139C5410 /* Pods */,
 				644C923820A6E45F211B9D61 /* Frameworks */,
@@ -145,6 +159,9 @@
 			children = (
 				A20A52961C93E0080025EDF6 /* ViewControllers */,
 				A20A52AF1C94B07E0025EDF6 /* Views */,
+				A20A52C31C9534B40025EDF6 /* PortfolioMapManager.swift */,
+				A20A52C11C95248D0025EDF6 /* PortfolioNode.swift */,
+				A20A52C51C9537010025EDF6 /* TFPointAnnotation.swift */,
 				A20A52A11C941D420025EDF6 /* ConnectedUser.swift */,
 				A20A52671C93CF1C0025EDF6 /* AppDelegate.swift */,
 				A20A526B1C93CF1C0025EDF6 /* Main.storyboard */,
@@ -161,7 +178,7 @@
 				A20A527E1C93CF1C0025EDF6 /* Info.plist */,
 			);
 			path = TrafolioTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		A20A52861C93CF1C0025EDF6 /* TrafolioUITests */ = {
 			isa = PBXGroup;
@@ -196,6 +213,7 @@
 				A20A52B41C94B33E0025EDF6 /* EditPortfolioController.swift */,
 				A20A52B61C94E7460025EDF6 /* UploadPhotoController.swift */,
 				A20A52BA1C94F42E0025EDF6 /* BatchUploadController.swift */,
+				A2EDAE271C95675D00BF046A /* ViewPortfolioController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -207,6 +225,9 @@
 				A20A52B21C94B0A60025EDF6 /* PortfolioCell.xib */,
 				A20A52BC1C94F8CC0025EDF6 /* UploadPhotoCell.xib */,
 				A20A52BE1C94F8D80025EDF6 /* UploadPhotoCell.swift */,
+				A2EDAE211C954F2000BF046A /* TFAnnotationView.xib */,
+				A2EDAE231C954F2900BF046A /* TFAnnotationView.swift */,
+				A2EDAE251C9555CC00BF046A /* PortfolioTableViewDelegate.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -328,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A20A52B31C94B0A60025EDF6 /* PortfolioCell.xib in Resources */,
+				A2EDAE221C954F2000BF046A /* TFAnnotationView.xib in Resources */,
 				A20A52721C93CF1C0025EDF6 /* LaunchScreen.storyboard in Resources */,
 				A20A526F1C93CF1C0025EDF6 /* Assets.xcassets in Resources */,
 				A20A526D1C93CF1C0025EDF6 /* Main.storyboard in Resources */,
@@ -406,12 +428,18 @@
 			files = (
 				A20A52A21C941D420025EDF6 /* ConnectedUser.swift in Sources */,
 				A20A52BB1C94F42E0025EDF6 /* BatchUploadController.swift in Sources */,
+				A20A52C21C95248D0025EDF6 /* PortfolioNode.swift in Sources */,
 				A20A52981C93E01B0025EDF6 /* SignupViewController.swift in Sources */,
 				A20A52AE1C94A3380025EDF6 /* CreatePortfolioViewController.swift in Sources */,
+				A2EDAE241C954F2900BF046A /* TFAnnotationView.swift in Sources */,
+				A20A52C61C9537010025EDF6 /* TFPointAnnotation.swift in Sources */,
+				A20A52C41C9534B40025EDF6 /* PortfolioMapManager.swift in Sources */,
 				A20A52AC1C94971A0025EDF6 /* MeViewController.swift in Sources */,
 				A20A52B51C94B33E0025EDF6 /* EditPortfolioController.swift in Sources */,
+				A2EDAE261C9555CC00BF046A /* PortfolioTableViewDelegate.swift in Sources */,
 				A20A52B11C94B0970025EDF6 /* PortfolioCell.swift in Sources */,
 				A20A52A41C94209B0025EDF6 /* MainTabBarController.swift in Sources */,
+				A2EDAE281C95675D00BF046A /* ViewPortfolioController.swift in Sources */,
 				A20A526A1C93CF1C0025EDF6 /* LoginViewController.swift in Sources */,
 				A20A52681C93CF1C0025EDF6 /* AppDelegate.swift in Sources */,
 				A20A52B71C94E7460025EDF6 /* UploadPhotoController.swift in Sources */,

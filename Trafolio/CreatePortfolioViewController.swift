@@ -26,7 +26,8 @@ class CreatePortfolioViewController: UIViewController {
 				"username": ConnectedUser.sharedInstance().username!,
 				"title": self.titleTF.text!,
 				"public": self.accessSwitch.on ? "true" : "false",
-				"description": self.descriptionTextView.text
+				"description": self.descriptionTextView.text,
+				"date": String(NSDate().timeIntervalSince1970)
 			]
 			self.manager.POST(SERVER_URL + PROFOLIO_PATH, parameters: params, success: { (dataTask, response) -> Void in
 					NSLog("Create portfolio succeed")

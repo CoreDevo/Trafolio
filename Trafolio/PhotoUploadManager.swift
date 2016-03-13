@@ -20,7 +20,7 @@ class PhotoUploadManager: NSObject {
 
 	let IMAGE_PATH = "/images.php"
 
-	func sendPhoto(imageData: NSData, filename: String, portfolioName: String, description: String, location: CLLocation) {
+	func sendPhoto(imageData: NSData, filename: String, portfolioName: String, description: String, location: CLLocation, date: NSDate, completed:((succeed: Bool) -> ())?) {
 		let urlManager = AFURLSessionManager(sessionConfiguration: NSURLSessionConfiguration.defaultSessionConfiguration())
 		let request = NSMutableURLRequest(URL: NSURL(string: SERVER_URL + IMAGE_PATH)!)
 		request.HTTPMethod = "POST"
@@ -28,18 +28,25 @@ class PhotoUploadManager: NSObject {
 			"portfolioname": portfolioName,
 			"description": description,
 			"latitude": location.coordinate.latitude.description,
-			"longitude": location.coordinate.longitude.description]
+			"longitude": location.coordinate.longitude.description,
+			"date": String(date.timeIntervalSince1970)]
 		let boundary = self.generateBoundaryString()
 		request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
 		request.HTTPBody = self.createBodyWithParameters(params, filename: filename, filePathKey: "file", imageDataKey: imageData, boundary: boundary)
 		let task = urlManager.dataTaskWithRequest(request) { (data, response, error) -> Void in
 			if error != nil {
 				print("error=\(error)")
+				if let cb = completed {
+					cb(succeed: false)
+				}
 				return
 			}
 
 			// You can print out response object
 			print("******* response = \(response)")
+			if let cb = completed {
+				cb(succeed: true)
+			}
 
 		}
 		task.resume()

@@ -19,6 +19,9 @@ PODS:
     - BSGridCollectionViewLayout (~> 1.0)
     - UIImageViewModeScaleAspect (~> 1.3)
   - CryptoSwift (0.2.3)
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
   - SwiftyJSON (2.3.2)
   - UIImageViewModeScaleAspect (1.3)
 
@@ -26,6 +29,7 @@ DEPENDENCIES:
   - AFNetworking (~> 3.0.4)
   - BSImagePicker (~> 2.1)
   - CryptoSwift (~> 0.2.3)
+  - SDWebImage (~> 3.7)
   - SwiftyJSON (~> 2.3)
 
 SPEC CHECKSUMS:
@@ -33,6 +37,7 @@ SPEC CHECKSUMS:
   BSGridCollectionViewLayout: 60f542a260887148f9f4db1fc0e637e3d560df91
   BSImagePicker: 99c38db9ead99229d1dd4d09e6d5a707328405a5
   CryptoSwift: b2bf37b8e7cc6d682ef3365cb966bc5ae5174aa5
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   UIImageViewModeScaleAspect: ec78901acfc20d3782154111a21d34390f8f71ad
 

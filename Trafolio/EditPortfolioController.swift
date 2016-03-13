@@ -3,13 +3,17 @@ import AFNetworking
 import MapKit
 import BSImagePicker
 import PhotosUI
+import SDWebImage
 
 class EditPortfolioController: UIViewController, MKMapViewDelegate, UIGestureRecognizerDelegate, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 	var editingPortfolioName: String?
 
 	@IBOutlet weak var mapView: MKMapView!
 
+	private var currentCreateAnnotation: TFPointAnnotation?
+
 	let IMAGE_PATH = "/images.php"
+	let PORTFOLIO_GET_PATH = "/getimages.php"
 
 	private var mapTapRecognizer: UIGestureRecognizer!
 	private var locationManager = CLLocationManager()
@@ -19,6 +23,8 @@ class EditPortfolioController: UIViewController, MKMapViewDelegate, UIGestureRec
 		manager.requestSerializer.setValue(AUTH_CODE, forHTTPHeaderField: "auth_code")
 		return manager
 	}
+
+	private var imageDownloader = SDWebImageManager.sharedManager()
 
 	private var bufferAsset: PHAsset!
 	private var bufferLocation: CLLocation!
@@ -34,20 +40,43 @@ class EditPortfolioController: UIViewController, MKMapViewDelegate, UIGestureRec
 
 		self.locationManager.requestWhenInUseAuthorization()
 		self.locationManager.requestLocation()
+
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("uploadsFinished"), name: TrafolioUploadCompletedNotification, object: nil)
+
+		self.uploadsFinished()
+	}
+
+
+	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
+		if let loc = self.locationManager.location {
+			self.centerMapOnLocation(loc, animated: false)
+		}
 	}
 
 	// MARK: MapView Delegate
 
 	func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-		let customPinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "AddPhotoCallout")
-		customPinView.pinTintColor = UIColor.redColor()
-		customPinView.animatesDrop = true
-		customPinView.canShowCallout = true
+		if let tfAnnotation = annotation as? TFPointAnnotation {
+			if tfAnnotation.type == .Create {
+				let customPinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "AddPhotoCallout")
+				customPinView.pinTintColor = UIColor.redColor()
+				customPinView.animatesDrop = true
+				customPinView.canShowCallout = true
 
-		let button = UIButton(type: .ContactAdd)
-		customPinView.rightCalloutAccessoryView = button
-		return customPinView
+				let button = UIButton(type: .ContactAdd)
+				customPinView.rightCalloutAccessoryView = button
+				return customPinView
+			} else {
+				let annotationView = TFAnnotationView(annotation: tfAnnotation, reuseIdentifier: "ShowPhotoPin")
+				annotationView.translatesAutoresizingMaskIntoConstraints = false
+				annotationView.imageView.sd_setImageWithURL(tfAnnotation.node!.image!)
+				return annotationView
+			}
+		}
+		return MKAnnotationView()
 	}
+
 
 	func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
 		let loc = view.annotation!.coordinate
@@ -69,14 +98,17 @@ class EditPortfolioController: UIViewController, MKMapViewDelegate, UIGestureRec
 	@objc private func didLongPressed(recognizer: UILongPressGestureRecognizer) {
 		switch recognizer.state {
 		case .Ended:
-			self.mapView.removeAnnotations(self.mapView.annotations)
+			if let lastAnnotation = self.currentCreateAnnotation {
+				self.mapView.removeAnnotation(lastAnnotation)
+			}
 			let point = recognizer.locationInView(self.mapView)
 			let tapPoint = self.mapView.convertPoint(point, toCoordinateFromView: self.mapView)
-			let annotation = MKPointAnnotation()
+			let annotation = TFPointAnnotation(type: .Create)
 			annotation.coordinate = tapPoint
 			annotation.title = "Add a photo"
 			self.mapView.addAnnotation(annotation)
 			self.mapView.selectAnnotation(annotation, animated: true)
+			self.currentCreateAnnotation = annotation
 		default:
 			()
 		}
@@ -143,6 +175,35 @@ class EditPortfolioController: UIViewController, MKMapViewDelegate, UIGestureRec
 			default:
 				()
 			}
+		}
+	}
+
+	// MARK: Uploads finished
+
+	@objc private func uploadsFinished() {
+		let params = ["username": ConnectedUser.sharedInstance().username!,
+					  "portfolio": self.editingPortfolioName!]
+		self.manager.GET(SERVER_URL + PORTFOLIO_GET_PATH, parameters: params, success: { (dataTask, response) -> Void in
+			if let data = response {
+				let result = PortfolioMapManager.getNodesFromJSON(data)
+				self.constructMapAnnotations(result)
+			}
+			}) { (dataTask, error) -> Void in
+				NSLog("Get Portfolio failed, error \(error.localizedDescription)")
+		}
+		NSLog("Update Portfolio")
+	}
+
+	// MARK: Update Maps
+
+	private func constructMapAnnotations(nodes: [PortfolioNode]) {
+		self.mapView.removeAnnotations(self.mapView.annotations)
+		self.currentCreateAnnotation = nil
+		for node in nodes {
+			let annotation = TFPointAnnotation(type: .Show)
+			annotation.coordinate = node.location.coordinate
+			annotation.node = node
+			self.mapView.addAnnotation(annotation)
 		}
 	}
 }

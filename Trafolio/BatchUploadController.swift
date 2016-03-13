@@ -2,6 +2,14 @@ import UIKit
 import PhotosUI
 import CoreLocation
 
+let TrafolioUploadCompletedNotification = "TrafolioUploadCompletedNotification"
+
+enum UploadState {
+	case Success
+	case Failed
+	case Waiting
+}
+
 class BatchUploadController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
 	@IBOutlet weak var tableView: UITableView!
@@ -11,10 +19,13 @@ class BatchUploadController: UIViewController, UITableViewDelegate, UITableViewD
 	private var images: [UIImage]!
 	private var locations: [CLLocation]!
 	private var locationNames: [String?]!
+	private var dates: [NSDate]!
 	private var	filenames: [String]!
-	private var processed: [Bool]!
+	private var processed: [UploadState]!
 	private var descriptions: [String?]!
 	private var inited = false
+
+	private let geocoderQuene = dispatch_queue_create("game_manager_queue", DISPATCH_QUEUE_SERIAL)
 
 	var locationManager: CLLocationManager {
 		return (UIApplication.sharedApplication().delegate as! AppDelegate).locationManager
@@ -45,8 +56,9 @@ class BatchUploadController: UIViewController, UITableViewDelegate, UITableViewD
 		self.images = Array<UIImage>(count: self.assets.count, repeatedValue: UIImage(named: "placeholder")!)
 		self.locations = Array<CLLocation>(count: self.assets.count, repeatedValue: CLLocation())
 		self.locationNames = Array<String?>(count: self.assets.count, repeatedValue: nil)
+		self.dates = Array<NSDate>(count: self.assets.count, repeatedValue: NSDate())
 		self.filenames = Array<String>(count: self.assets.count, repeatedValue: "")
-		self.processed = Array<Bool>(count: self.assets.count, repeatedValue: false)
+		self.processed = Array<UploadState>(count: self.assets.count, repeatedValue: .Waiting)
 		self.descriptions = Array<String?>(count: self.assets.count, repeatedValue: nil)
 		self.tableView.delegate = self
 		self.tableView.dataSource = self
@@ -80,6 +92,15 @@ class BatchUploadController: UIViewController, UITableViewDelegate, UITableViewD
 		cell.selectionStyle = .None
 		cell.descriptionView.tag = index
 		cell.descriptionView.delegate = self
+		cell.descriptionView.text = self.descriptions[index]
+		switch self.processed[index] {
+		case .Waiting:
+			cell.descriptionView.backgroundColor = UIColor.whiteColor()
+		case .Success:
+			cell.descriptionView.backgroundColor = UIColor(red: 0, green: 1, blue: 0, alpha: 0.7)
+		case .Failed:
+			cell.descriptionView.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.7)
+		}
 		return cell
 	}
 
@@ -94,7 +115,33 @@ class BatchUploadController: UIViewController, UITableViewDelegate, UITableViewD
 		self.descriptions[index] = textField.text
 	}
 
+	private func loadNextGeocode(index: Int) -> () {
+		if index == self.assets.count {return}
+		if let location = self.assets[index].location {
+			self.locations[index] = location
+			self.geocodeManager.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+				if error == nil {
+					let place = placemarks?.first?.name
+					self.locationNames[index] = place
+					self.loadNextGeocode(index+1)
+					self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)], withRowAnimation: .None)
+				}
+			})
+		} else {
+			self.locations[index] = self.locationManager.location!
+			self.geocodeManager.reverseGeocodeLocation(self.locationManager.location!, completionHandler: { (placemarks, error) -> Void in
+				if error == nil {
+					let place = placemarks?.first?.name
+					self.locationNames[index] = place
+					self.loadNextGeocode(index+1)
+					self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)], withRowAnimation: .None)
+				}
+			})
+		}
+	}
+
 	private func startLoadData() {
+		self.loadNextGeocode(0)
 		for index in 0..<self.assets.count {
 			let manager = PHImageManager()
 			let options = PHImageRequestOptions()
@@ -120,23 +167,10 @@ class BatchUploadController: UIViewController, UITableViewDelegate, UITableViewD
 
 					self.images[index] = image
 
-					if let location = self.assets[index].location {
-						self.locations[index] = location
-						self.geocodeManager.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
-							if error == nil {
-								let place = placemarks?.first?.name
-								self.locationNames[index] = place
-							}
-						})
-					} else {
-						self.locations[index] = self.locationManager.location!
-						self.geocodeManager.reverseGeocodeLocation(self.locationManager.location!, completionHandler: { (placemarks, error) -> Void in
-							if error == nil {
-								let place = placemarks?.first?.name
-								self.locationNames[index] = place
-							}
-						})
+					if let date = self.assets[index].creationDate {
+						self.dates[index] = date
 					}
+
 					self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)], withRowAnimation: UITableViewRowAnimation.None)
 				}
 			}
@@ -146,13 +180,28 @@ class BatchUploadController: UIViewController, UITableViewDelegate, UITableViewD
 
 
 	@IBAction func uploadPhotos(sender: UIBarButtonItem) {
-		for index in 0..<self.assets.count {
-			if let data = UIImageJPEGRepresentation(self.images[index], 1) {
-				PhotoUploadManager.sharedInstance().sendPhoto(data, filename: self.filenames[index], portfolioName: self.portfolioName, description: self.descriptions[index] ?? "", location: self.locations[index])
-			} else {
-				NSLog("Photo at index \(index) failed upload")
+		let checkDone = {
+			var done = true
+			for state in self.processed {
+				done = done && state != .Waiting
+			}
+			if done {
+				NSNotificationCenter.defaultCenter().postNotificationName(TrafolioUploadCompletedNotification, object: self)
 			}
 		}
-		self.navigationController?.popViewControllerAnimated(true)
+		sender.enabled = false
+		for index in 0..<self.assets.count {
+			if let data = UIImageJPEGRepresentation(self.images[index], 0.8) {
+				PhotoUploadManager.sharedInstance().sendPhoto(data, filename: self.filenames[index], portfolioName: self.portfolioName, description: self.descriptions[index] ?? "", location: self.locations[index], date: self.dates[index]) { (succeed) -> () in
+					self.processed[index] = succeed ? .Success : .Failed
+					self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)], withRowAnimation: UITableViewRowAnimation.None)
+					checkDone()
+				}
+			} else {
+				NSLog("Photo at index \(index) failed upload")
+				self.processed[index] = .Failed
+				checkDone()
+			}
+		}
 	}
 }

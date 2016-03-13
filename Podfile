@@ -6,4 +6,5 @@ target 'Trafolio' do
   pod 'SwiftyJSON', '~> 2.3'
   pod "BSImagePicker", "~> 2.1"
   pod 'CryptoSwift', '~> 0.2.3'
+  pod 'SDWebImage', '~>3.7'
 end
