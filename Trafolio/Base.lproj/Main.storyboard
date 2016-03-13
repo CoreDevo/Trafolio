@@ -20,8 +20,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="6YU-wc-wIS">
-                                <rect key="frame" x="62" y="119" width="250" height="133"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="register" translatesAutoresizingMaskIntoConstraints="NO" id="y1S-3Z-gcf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="6YU-wc-wIS">
+                                <rect key="frame" x="20" y="135" width="325" height="173"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6YU-wc-wIS" secondAttribute="height" multiplier="15:8" id="maR-G5-AJb"/>
                                 </constraints>
@@ -37,14 +40,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D3U-we-gJE" userLabel="LoginBox">
                                 <rect key="frame" x="16" y="343" width="343" height="150"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="J5O-cu-fnv" userLabel="Username">
-                                        <rect key="frame" x="71.5" y="20" width="200" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="7pO-Ni-WyZ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EqF-7a-XB9" userLabel="Password">
                                         <rect key="frame" x="71.5" y="58" width="200" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -56,19 +51,9 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECb-h5-7WZ">
-                                        <rect key="frame" x="157" y="123" width="43" height="27"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Sign up">
-                                            <color key="titleColor" red="0.0" green="0.23229170590000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="signupAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nVy-X1-azj"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSb-kh-89l">
                                         <rect key="frame" x="141" y="96" width="60" height="30"/>
-                                        <color key="backgroundColor" red="0.0" green="0.23229170594567927" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.18798163528668377" green="0.71719440138026802" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="Rua-Cc-sQE"/>
                                             <constraint firstAttribute="height" constant="30" id="SrH-z1-APl"/>
@@ -84,6 +69,24 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="46b-fe-Yd6"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="J5O-cu-fnv" userLabel="Username">
+                                        <rect key="frame" x="71" y="20" width="200" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="7pO-Ni-WyZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECb-h5-7WZ">
+                                        <rect key="frame" x="161" y="123" width="43" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Sign up">
+                                            <color key="titleColor" red="0.034269921239816314" green="0.053955806705244136" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signupAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nVy-X1-azj"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -112,7 +115,7 @@
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.48627450980392156" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.42751329715805819" green="0.3435723130193572" blue="0.35550699403195102" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="D3U-we-gJE" firstAttribute="top" secondItem="1u7-6P-fbC" secondAttribute="bottom" id="16z-se-sG9"/>
                             <constraint firstItem="1u7-6P-fbC" firstAttribute="height" secondItem="U0i-qR-bul" secondAttribute="height" id="7Jv-g6-gZ6"/>
@@ -164,6 +167,11 @@
                     <view key="view" contentMode="scaleToFill" id="lnL-bd-F15">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="7BF74002-F2ED-4868-8F57-53A273A77005" translatesAutoresizingMaskIntoConstraints="NO" id="kUt-9s-n6J">
+                                <rect key="frame" x="13" y="173" width="348" height="333"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Friends" id="rWr-Ac-fzw">
@@ -654,6 +662,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fire2" translatesAutoresizingMaskIntoConstraints="NO" id="EQY-XB-a2R">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wMD-PV-ub5" userLabel="SignUpBox">
                                 <rect key="frame" x="16" y="178.5" width="343" height="250"/>
                                 <subviews>
@@ -702,7 +713,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbe-hY-825">
                                         <rect key="frame" x="83.5" y="216.5" width="70" height="30"/>
-                                        <color key="backgroundColor" red="0.0" green="0.23229170590000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.48709939829999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="nlt-rX-n3u"/>
                                             <constraint firstAttribute="height" constant="30" id="txP-3i-Tz5"/>
@@ -722,7 +733,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDE-uM-6Ua">
                                         <rect key="frame" x="189" y="217" width="70" height="30"/>
-                                        <color key="backgroundColor" red="0.0" green="0.23229170590000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.48709939829999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="dD3-mc-KgK"/>
                                             <constraint firstAttribute="width" constant="70" id="meO-Vf-F48"/>
@@ -1074,7 +1085,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iKa-F0-e7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1294.5" y="1668.5"/>
+            <point key="canvasLocation" x="1526.5" y="1768.5"/>
         </scene>
         <!--Setting Navi-->
         <scene sceneID="YKA-mV-ail">
@@ -1098,7 +1109,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="500" height="200"/>
+        <image name="7BF74002-F2ED-4868-8F57-53A273A77005" width="900" height="886"/>
+        <image name="Logo" width="250" height="150"/>
+        <image name="fire2" width="498" height="750"/>
         <image name="friends_selected" width="30" height="30"/>
         <image name="friends_unselected" width="30" height="30"/>
         <image name="home_selected" width="30" height="30"/>
@@ -1106,6 +1119,7 @@
         <image name="location" width="137" height="137"/>
         <image name="me_selected" width="30" height="30"/>
         <image name="me_unselected" width="30" height="30"/>
+        <image name="register" width="640" height="956"/>
         <image name="settings_selected" width="30" height="30"/>
         <image name="settings_unselected" width="30" height="30"/>
     </resources>
@@ -1114,4 +1128,5 @@
         <segue reference="zGw-Ik-EYe"/>
         <segue reference="pIa-K1-GLd"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.83161760739316315" green="0.70194316541161683" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

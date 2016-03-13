@@ -23,7 +23,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IE1-TQ-ktq">
                             <rect key="frame" x="129" y="14" width="195" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="kTK-k2-on3">
@@ -44,7 +44,7 @@
                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="Xuq-NU-24x" firstAttribute="leading" secondItem="kTK-k2-on3" secondAttribute="trailing" constant="3" id="2jT-la-Lnh"/>
                         <constraint firstItem="kTK-k2-on3" firstAttribute="centerY" secondItem="7Lq-rg-f6Y" secondAttribute="centerY" id="6i8-gr-H37"/>
@@ -65,7 +65,7 @@
                     </variation>
                 </view>
             </subviews>
-            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="7Lq-rg-f6Y" secondAttribute="trailing" id="G2P-V6-zhK"/>
                 <constraint firstItem="7Lq-rg-f6Y" firstAttribute="leading" secondItem="HG0-Q5-nLe" secondAttribute="leading" id="MpR-2F-c7s"/>

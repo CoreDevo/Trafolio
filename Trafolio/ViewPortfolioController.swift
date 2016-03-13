@@ -46,7 +46,7 @@ class ViewPortfolioController: UIViewController, UIScrollViewDelegate, MKMapView
 			self.editButton.enabled = false
 		}
 		self.setupScrollView()
-		let params = ["username": ConnectedUser.sharedInstance().username!,
+		let params = ["username": self.portfolio.username,
 					  "portfolio": self.portfolio.name]
 		self.manager.GET(SERVER_URL + PORTFOLIO_GET_PATH, parameters: params, success: { (dataTask, response) -> Void in
 			if let data = response {
@@ -119,6 +119,7 @@ class ViewPortfolioController: UIViewController, UIScrollViewDelegate, MKMapView
 		self.annotations = []
 
 		for index in 0..<nodes.count {
+			print(nodes[index].image!)
 			self.scrollImageViews[index].sd_setImageWithURL(nodes[index].image!)
 			self.descriptions.append(nodes[index].description)
 			let annotation = TFPointAnnotation(type: .Show)
