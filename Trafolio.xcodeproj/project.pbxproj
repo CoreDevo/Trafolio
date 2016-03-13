@@ -16,6 +16,18 @@
 		A20A527D1C93CF1C0025EDF6 /* TrafolioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A527C1C93CF1C0025EDF6 /* TrafolioTests.swift */; };
 		A20A52881C93CF1C0025EDF6 /* TrafolioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52871C93CF1C0025EDF6 /* TrafolioUITests.swift */; };
 		A20A52981C93E01B0025EDF6 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52971C93E01B0025EDF6 /* SignupViewController.swift */; };
+		A20A52A21C941D420025EDF6 /* ConnectedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52A11C941D420025EDF6 /* ConnectedUser.swift */; };
+		A20A52A41C94209B0025EDF6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52A31C94209B0025EDF6 /* MainTabBarController.swift */; };
+		A20A52A61C943A990025EDF6 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52A51C943A990025EDF6 /* Utils.swift */; };
+		A20A52AA1C9496F80025EDF6 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52A91C9496F80025EDF6 /* DashboardController.swift */; };
+		A20A52AC1C94971A0025EDF6 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52AB1C94971A0025EDF6 /* MeViewController.swift */; };
+		A20A52AE1C94A3380025EDF6 /* CreatePortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52AD1C94A3380025EDF6 /* CreatePortfolioViewController.swift */; };
+		A20A52B11C94B0970025EDF6 /* PortfolioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52B01C94B0970025EDF6 /* PortfolioCell.swift */; };
+		A20A52B31C94B0A60025EDF6 /* PortfolioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A20A52B21C94B0A60025EDF6 /* PortfolioCell.xib */; };
+		A20A52B51C94B33E0025EDF6 /* EditPortfolioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52B41C94B33E0025EDF6 /* EditPortfolioController.swift */; };
+		A20A52B71C94E7460025EDF6 /* UploadPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52B61C94E7460025EDF6 /* UploadPhotoController.swift */; };
+		A20A52B91C94E9B80025EDF6 /* PhotoUploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52B81C94E9B80025EDF6 /* PhotoUploadManager.swift */; };
+		A20A52BB1C94F42E0025EDF6 /* BatchUploadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52BA1C94F42E0025EDF6 /* BatchUploadController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +65,18 @@
 		A20A52891C93CF1C0025EDF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A20A52971C93E01B0025EDF6 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		A20A52991C93EF7B0025EDF6 /* Trafolio-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Trafolio-Bridging-Header.h"; sourceTree = "<group>"; };
+		A20A52A11C941D420025EDF6 /* ConnectedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectedUser.swift; sourceTree = "<group>"; };
+		A20A52A31C94209B0025EDF6 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		A20A52A51C943A990025EDF6 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		A20A52A91C9496F80025EDF6 /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		A20A52AB1C94971A0025EDF6 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		A20A52AD1C94A3380025EDF6 /* CreatePortfolioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePortfolioViewController.swift; sourceTree = "<group>"; };
+		A20A52B01C94B0970025EDF6 /* PortfolioCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioCell.swift; sourceTree = "<group>"; };
+		A20A52B21C94B0A60025EDF6 /* PortfolioCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PortfolioCell.xib; sourceTree = "<group>"; };
+		A20A52B41C94B33E0025EDF6 /* EditPortfolioController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPortfolioController.swift; sourceTree = "<group>"; };
+		A20A52B61C94E7460025EDF6 /* UploadPhotoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadPhotoController.swift; sourceTree = "<group>"; };
+		A20A52B81C94E9B80025EDF6 /* PhotoUploadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoUploadManager.swift; sourceTree = "<group>"; };
+		A20A52BA1C94F42E0025EDF6 /* BatchUploadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatchUploadController.swift; sourceTree = "<group>"; };
 		EF987680B24268D8F217C52D /* Pods_Trafolio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trafolio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -116,8 +140,11 @@
 			isa = PBXGroup;
 			children = (
 				A20A52961C93E0080025EDF6 /* ViewControllers */,
+				A20A52AF1C94B07E0025EDF6 /* Views */,
+				A20A52A11C941D420025EDF6 /* ConnectedUser.swift */,
 				A20A52671C93CF1C0025EDF6 /* AppDelegate.swift */,
 				A20A526B1C93CF1C0025EDF6 /* Main.storyboard */,
+				A20A52B81C94E9B80025EDF6 /* PhotoUploadManager.swift */,
 				A20A52951C93D2CC0025EDF6 /* SupportingFiles */,
 			);
 			path = Trafolio;
@@ -148,6 +175,7 @@
 				A20A52701C93CF1C0025EDF6 /* LaunchScreen.storyboard */,
 				A20A52731C93CF1C0025EDF6 /* Info.plist */,
 				A20A52991C93EF7B0025EDF6 /* Trafolio-Bridging-Header.h */,
+				A20A52A51C943A990025EDF6 /* Utils.swift */,
 			);
 			name = SupportingFiles;
 			sourceTree = "<group>";
@@ -157,8 +185,24 @@
 			children = (
 				A20A52691C93CF1C0025EDF6 /* LoginViewController.swift */,
 				A20A52971C93E01B0025EDF6 /* SignupViewController.swift */,
+				A20A52A31C94209B0025EDF6 /* MainTabBarController.swift */,
+				A20A52A91C9496F80025EDF6 /* DashboardController.swift */,
+				A20A52AB1C94971A0025EDF6 /* MeViewController.swift */,
+				A20A52AD1C94A3380025EDF6 /* CreatePortfolioViewController.swift */,
+				A20A52B41C94B33E0025EDF6 /* EditPortfolioController.swift */,
+				A20A52B61C94E7460025EDF6 /* UploadPhotoController.swift */,
+				A20A52BA1C94F42E0025EDF6 /* BatchUploadController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A20A52AF1C94B07E0025EDF6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A20A52B01C94B0970025EDF6 /* PortfolioCell.swift */,
+				A20A52B21C94B0A60025EDF6 /* PortfolioCell.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		B6E1FD470F52E97F139C5410 /* Pods */ = {
@@ -277,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A20A52B31C94B0A60025EDF6 /* PortfolioCell.xib in Resources */,
 				A20A52721C93CF1C0025EDF6 /* LaunchScreen.storyboard in Resources */,
 				A20A526F1C93CF1C0025EDF6 /* Assets.xcassets in Resources */,
 				A20A526D1C93CF1C0025EDF6 /* Main.storyboard in Resources */,
@@ -352,9 +397,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A20A52A21C941D420025EDF6 /* ConnectedUser.swift in Sources */,
+				A20A52BB1C94F42E0025EDF6 /* BatchUploadController.swift in Sources */,
 				A20A52981C93E01B0025EDF6 /* SignupViewController.swift in Sources */,
+				A20A52AE1C94A3380025EDF6 /* CreatePortfolioViewController.swift in Sources */,
+				A20A52AC1C94971A0025EDF6 /* MeViewController.swift in Sources */,
+				A20A52B51C94B33E0025EDF6 /* EditPortfolioController.swift in Sources */,
+				A20A52B11C94B0970025EDF6 /* PortfolioCell.swift in Sources */,
+				A20A52A41C94209B0025EDF6 /* MainTabBarController.swift in Sources */,
 				A20A526A1C93CF1C0025EDF6 /* LoginViewController.swift in Sources */,
 				A20A52681C93CF1C0025EDF6 /* AppDelegate.swift in Sources */,
+				A20A52B71C94E7460025EDF6 /* UploadPhotoController.swift in Sources */,
+				A20A52AA1C9496F80025EDF6 /* DashboardController.swift in Sources */,
+				A20A52A61C943A990025EDF6 /* Utils.swift in Sources */,
+				A20A52B91C94E9B80025EDF6 /* PhotoUploadManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +485,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -473,6 +530,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

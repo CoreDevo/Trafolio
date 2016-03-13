@@ -1,4 +1,7 @@
 import UIKit
+import AFNetworking
+import CryptoSwift
+import SwiftyJSON
 
 class SignupViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var signupBox: UIView!
@@ -10,13 +13,27 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var confirmPasswordLabel: UILabel!
 	@IBOutlet weak var signupButton: UIButton!
 	@IBOutlet weak var cancelButton: UIButton!
+	@IBOutlet weak var spinnerView: UIView!
+
+	weak var loginVC: LoginViewController?
+
+	private var spinner: UIActivityIndicatorView!
 
 	private var validUsername = false
 	private var validPassword = false
 	private var validConfirmation = false
 
+	let SIGNUP_PATH = "/register.php"
+
+	private var manager: AFHTTPSessionManager {
+		let manager = (UIApplication.sharedApplication().delegate as! AppDelegate).httpManager
+		manager.requestSerializer.setValue(AUTH_CODE, forHTTPHeaderField: "auth_code")
+		return manager
+	}
+
 	struct LabelContents {
 		static let UsernameTooShort = "Username should be longer than 4 characters"
+		static let UsernameExist = "Username already exist"
 		static let PasswordTooShort = "Password should be at least 6 characters long"
 		static let ConfirmNotMatch = "Passwords do not match"
 		static let EnterPassword = "Please enter a password"
@@ -42,6 +59,18 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
 		self.usernameTF.addTarget(self, action: Selector("textFieldEdited:"), forControlEvents: .EditingChanged)
 		self.passwordTF.addTarget(self, action: Selector("textFieldEdited:"), forControlEvents: .EditingChanged)
 		self.confirmPasswordTF.addTarget(self, action: Selector("textFieldEdited:"), forControlEvents: .EditingChanged)
+
+		self.spinner = UIActivityIndicatorView(activityIndicatorStyle: .White)
+		self.spinnerView.addSubview(self.spinner)
+		self.spinner.translatesAutoresizingMaskIntoConstraints = false
+		let attributes: [NSLayoutAttribute] = [.Top, .Bottom, .Leading, .Trailing]
+		var mConstraints: [NSLayoutConstraint] = []
+		for attr in attributes {
+			mConstraints.append(NSLayoutConstraint(item: self.spinner, attribute: attr, relatedBy: .Equal, toItem: self.spinnerView, attribute: attr, multiplier: 1, constant: 0))
+		}
+		self.spinnerView.addConstraints(mConstraints)
+
+		self.spinnerView.hidden = true
 	}
 
 	deinit {
@@ -68,7 +97,43 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
 	// MARK: Button Events
 
 	@IBAction func signupAction(sender: UIButton) {
+		self.spinnerView.hidden = false
+		self.signupButton.hidden = true
+		self.spinner.startAnimating()
 
+		let encryptedPW = self.passwordTF.text!.md5()
+		let params = ["username": self.usernameTF.text!, "password":encryptedPW]
+
+		self.manager.POST(SERVER_URL + SIGNUP_PATH, parameters: params, success: { (dataTask, response) -> Void in
+			NSLog("POST request succeed")
+			if let data = response {
+				let json = JSON(data)
+				let result = json["result"].stringValue
+				if result == "succeed" {
+					self.loginVC?.usernameTextField.text = self.usernameTF.text
+					self.dismissViewControllerAnimated(true, completion: nil)
+				} else if result == "exist" {
+					self.spinner.stopAnimating()
+					self.spinnerView.hidden = true
+					self.signupButton.hidden = false
+					self.usernameLabel.text = LabelContents.UsernameExist
+					self.usernameLabel.textColor = UIColor.redColor()
+					self.signupButton.enabled = false
+					self.signupButton.setTitleColor(UIColor.grayColor(), forState: .Normal)
+				}
+
+			} else {
+				self.spinner.stopAnimating()
+				self.spinnerView.hidden = true
+				self.signupButton.hidden = false
+				let alert = UIAlertController(title: "Error", message: "No response from server", preferredStyle: .Alert)
+				let ok = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+				alert.addAction(ok)
+				self.presentViewController(alert, animated: true, completion: nil)
+			}
+			}, failure: { (dataTask, error) -> Void in
+				NSLog("POST request failed, error: \(error.localizedDescription)")
+		})
 	}
 
 	@IBAction func cancelAction(sender: UIButton) {

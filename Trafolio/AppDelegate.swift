@@ -7,15 +7,29 @@
 //
 
 import UIKit
+import AFNetworking
+
+let SERVER_URL = "http://ec2-54-175-171-191.compute-1.amazonaws.com"
+let AUTH_CODE = "Peter.Emperor.Jiawei.CoreDev.Oldsiji.Beiguoxia.Cai"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 
+	var httpManager: AFHTTPSessionManager!
+
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
+
+		let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+		self.httpManager = AFHTTPSessionManager(baseURL: NSURL(string: SERVER_URL)!, sessionConfiguration: configuration)
+		let contentTypes = Set<String>(arrayLiteral: "text/plain", "text/html", "application/json")
+		self.httpManager.requestSerializer = AFJSONRequestSerializer()
+		self.httpManager.responseSerializer = AFJSONResponseSerializer()
+		self.httpManager.responseSerializer.acceptableContentTypes = contentTypes
+
 		return true
 	}
 
