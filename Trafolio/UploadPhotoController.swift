@@ -13,8 +13,12 @@ class UploadPhotoController: UIViewController {
 	var protfolioname: String!
 	var photo: UIImage?
 
-	var locationManager = CLLocationManager()
-	var geocodeManager = CLGeocoder()
+	var locationManager: CLLocationManager {
+		return (UIApplication.sharedApplication().delegate as! AppDelegate).locationManager
+	}
+	var geocodeManager: CLGeocoder {
+		return (UIApplication.sharedApplication().delegate as! AppDelegate).geocodeManager
+	}
 
 	var location: CLLocation!
 
@@ -22,7 +26,8 @@ class UploadPhotoController: UIViewController {
 		let manager = PHImageManager()
 		let options = PHImageRequestOptions()
 		options.synchronous = true
-		manager.requestImageForAsset(self.asset, targetSize: CGSizeMake(CGFloat(self.asset.pixelWidth) / 3, CGFloat(self.asset.pixelHeight) / 3), contentMode: .AspectFit, options: options) { (image, info) -> Void in
+		options.deliveryMode = .Opportunistic
+		manager.requestImageForAsset(self.asset, targetSize: CGSizeMake(CGFloat(self.asset.pixelWidth) / 2, CGFloat(self.asset.pixelHeight) / 2), contentMode: .AspectFit, options: options) { (image, info) -> Void in
 			var filename: String?
 			if info!.keys.contains(NSString(string: "PHImageFileURLKey"))
 			{
@@ -40,28 +45,13 @@ class UploadPhotoController: UIViewController {
 				self.locationInfo.text = placemarks?.first?.name
 			}
 		})
-//		if let location = self.asset.location {
-//			self.location = location
-//			self.geocodeManager.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
-//				if error == nil {
-//					self.locationInfo.text = placemarks?.first?.name
-//				}
-//			})
-//		} else {
-//			self.location = self.locationManager.location
-//			self.geocodeManager.reverseGeocodeLocation(self.location, completionHandler: { (placemarks, error) -> Void in
-//				if error == nil {
-//					self.locationInfo.text = placemarks?.first?.name
-//				}
-//			})
-//		}
 	}
 	
 	@IBAction func upload(sender: UIBarButtonItem) {
 		let filename = self.filenameTF.text ?? "0.jpg"
 		let portfolioname = self.protfolioname
 		let	description = self.descriptionView.text
-		let data = UIImageJPEGRepresentation(self.photo!, 0.8)!
+		let data = UIImageJPEGRepresentation(self.photo!, 1)!
 		PhotoUploadManager.sharedInstance().sendPhoto(data, filename: filename, portfolioName: portfolioname, description: description, location:self.location)
 		self.navigationController?.popViewControllerAnimated(true)
 	}

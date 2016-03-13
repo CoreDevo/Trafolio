@@ -22,7 +22,7 @@ class EditPortfolioController: UIViewController, MKMapViewDelegate, UIGestureRec
 
 	private var bufferAsset: PHAsset!
 	private var bufferLocation: CLLocation!
-
+	private var bufferAssets: [PHAsset]!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -113,6 +113,17 @@ class EditPortfolioController: UIViewController, MKMapViewDelegate, UIGestureRec
 		}
 	}
 
+	@IBAction func batchAddPhotos(sender: UIButton) {
+		let imagePicker = BSImagePickerViewController()
+		imagePicker.maxNumberOfSelections = 20
+		bs_presentImagePickerController(imagePicker, animated: true, select: nil, deselect: nil, cancel: nil, finish: { (assets) -> Void in
+			self.bufferAssets = assets
+			self.performSegueWithIdentifier("BatchPhotos", sender: self)
+			}) { () -> Void in
+				NSLog("Photo pick completed")
+		}
+	}
+
 	// MARK: Segue
 
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -123,6 +134,11 @@ class EditPortfolioController: UIViewController, MKMapViewDelegate, UIGestureRec
 					photoVC.asset = self.bufferAsset
 					photoVC.protfolioname = self.editingPortfolioName
 					photoVC.location = self.bufferLocation
+				}
+			case "BatchPhotos":
+				if let photoVC = segue.destinationViewController as? BatchUploadController {
+					photoVC.assets = self.bufferAssets
+					photoVC.portfolioName = self.editingPortfolioName
 				}
 			default:
 				()

@@ -28,6 +28,8 @@
 		A20A52B71C94E7460025EDF6 /* UploadPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52B61C94E7460025EDF6 /* UploadPhotoController.swift */; };
 		A20A52B91C94E9B80025EDF6 /* PhotoUploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52B81C94E9B80025EDF6 /* PhotoUploadManager.swift */; };
 		A20A52BB1C94F42E0025EDF6 /* BatchUploadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52BA1C94F42E0025EDF6 /* BatchUploadController.swift */; };
+		A20A52BD1C94F8CC0025EDF6 /* UploadPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A20A52BC1C94F8CC0025EDF6 /* UploadPhotoCell.xib */; };
+		A20A52BF1C94F8D80025EDF6 /* UploadPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A52BE1C94F8D80025EDF6 /* UploadPhotoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		A20A52B61C94E7460025EDF6 /* UploadPhotoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadPhotoController.swift; sourceTree = "<group>"; };
 		A20A52B81C94E9B80025EDF6 /* PhotoUploadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoUploadManager.swift; sourceTree = "<group>"; };
 		A20A52BA1C94F42E0025EDF6 /* BatchUploadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatchUploadController.swift; sourceTree = "<group>"; };
+		A20A52BC1C94F8CC0025EDF6 /* UploadPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UploadPhotoCell.xib; sourceTree = "<group>"; };
+		A20A52BE1C94F8D80025EDF6 /* UploadPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadPhotoCell.swift; sourceTree = "<group>"; };
 		EF987680B24268D8F217C52D /* Pods_Trafolio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trafolio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -201,6 +205,8 @@
 			children = (
 				A20A52B01C94B0970025EDF6 /* PortfolioCell.swift */,
 				A20A52B21C94B0A60025EDF6 /* PortfolioCell.xib */,
+				A20A52BC1C94F8CC0025EDF6 /* UploadPhotoCell.xib */,
+				A20A52BE1C94F8D80025EDF6 /* UploadPhotoCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -325,6 +331,7 @@
 				A20A52721C93CF1C0025EDF6 /* LaunchScreen.storyboard in Resources */,
 				A20A526F1C93CF1C0025EDF6 /* Assets.xcassets in Resources */,
 				A20A526D1C93CF1C0025EDF6 /* Main.storyboard in Resources */,
+				A20A52BD1C94F8CC0025EDF6 /* UploadPhotoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +415,7 @@
 				A20A526A1C93CF1C0025EDF6 /* LoginViewController.swift in Sources */,
 				A20A52681C93CF1C0025EDF6 /* AppDelegate.swift in Sources */,
 				A20A52B71C94E7460025EDF6 /* UploadPhotoController.swift in Sources */,
+				A20A52BF1C94F8D80025EDF6 /* UploadPhotoCell.swift in Sources */,
 				A20A52AA1C9496F80025EDF6 /* DashboardController.swift in Sources */,
 				A20A52A61C943A990025EDF6 /* Utils.swift in Sources */,
 				A20A52B91C94E9B80025EDF6 /* PhotoUploadManager.swift in Sources */,

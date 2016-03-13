@@ -8,6 +8,7 @@
 
 import UIKit
 import AFNetworking
+import CoreLocation
 
 let SERVER_URL = "http://ec2-54-175-171-191.compute-1.amazonaws.com"
 let AUTH_CODE = "Peter.Emperor.Jiawei.CoreDev.Oldsiji.Beiguoxia.Cai"
@@ -18,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
 
 	var httpManager: AFHTTPSessionManager!
-
+	var locationManager = CLLocationManager()
+	var geocodeManager = CLGeocoder()
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.

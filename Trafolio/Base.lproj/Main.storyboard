@@ -455,25 +455,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tmv-yt-bZW">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Xq-nI-Q9W">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tmv-yt-bZW" firstAttribute="leading" secondItem="7kT-FF-n7b" secondAttribute="leadingMargin" constant="-16" id="ARM-lb-gp8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tmv-yt-bZW" secondAttribute="trailing" constant="-16" id="JcD-sS-4Gl"/>
-                            <constraint firstItem="tmv-yt-bZW" firstAttribute="top" secondItem="Zgc-FE-9H6" secondAttribute="bottom" id="lcp-wh-Nz2"/>
-                            <constraint firstItem="m5o-v2-Fyh" firstAttribute="top" secondItem="tmv-yt-bZW" secondAttribute="bottom" id="xSx-Km-hIO"/>
+                            <constraint firstItem="4Xq-nI-Q9W" firstAttribute="centerY" secondItem="7kT-FF-n7b" secondAttribute="centerY" id="8ZU-sK-C9g"/>
+                            <constraint firstItem="4Xq-nI-Q9W" firstAttribute="width" secondItem="7kT-FF-n7b" secondAttribute="width" id="JFS-0O-cEr"/>
+                            <constraint firstItem="4Xq-nI-Q9W" firstAttribute="centerX" secondItem="7kT-FF-n7b" secondAttribute="centerX" id="KbC-cq-TDp"/>
+                            <constraint firstItem="4Xq-nI-Q9W" firstAttribute="height" secondItem="7kT-FF-n7b" secondAttribute="height" id="Q0P-xA-PDG"/>
+                            <constraint firstItem="4Xq-nI-Q9W" firstAttribute="top" secondItem="Zgc-FE-9H6" secondAttribute="bottom" id="S3A-Wu-j0k"/>
+                            <constraint firstItem="4Xq-nI-Q9W" firstAttribute="leading" secondItem="7kT-FF-n7b" secondAttribute="leadingMargin" constant="-16" id="bTx-DN-bVl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Xq-nI-Q9W" secondAttribute="trailing" constant="-16" id="oT7-Hb-wVF"/>
+                            <constraint firstItem="m5o-v2-Fyh" firstAttribute="top" secondItem="4Xq-nI-Q9W" secondAttribute="bottom" id="urM-Wu-s6y"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="S3A-Wu-j0k"/>
+                                <exclude reference="bTx-DN-bVl"/>
+                                <exclude reference="oT7-Hb-wVF"/>
+                                <exclude reference="urM-Wu-s6y"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Upload Photos" id="f5j-cj-f7l">
-                        <barButtonItem key="rightBarButtonItem" title="Upload" id="PB0-cC-7IA"/>
+                        <barButtonItem key="rightBarButtonItem" title="Upload" id="PB0-cC-7IA">
+                            <connections>
+                                <action selector="uploadPhotos:" destination="hF7-y1-tbo" id="0D3-Xj-NGO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="tableView" destination="tmv-yt-bZW" id="HQ0-cN-md3"/>
+                        <outlet property="tableView" destination="4Xq-nI-Q9W" id="6XB-tI-0O8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7g2-yY-n8V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -835,13 +851,13 @@
                                 </constraints>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or select photos from Gallery:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqz-0p-2lf">
-                                <rect key="frame" x="8" y="395" width="229.5" height="20.5"/>
+                                <rect key="frame" x="8" y="403.5" width="229.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWB-hb-BGa">
-                                <rect key="frame" x="142.5" y="449" width="89" height="33"/>
+                                <rect key="frame" x="142.5" y="457.5" width="89" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Add photos"/>
                                 <userDefinedRuntimeAttributes>
@@ -855,6 +871,9 @@
                                         <color key="value" red="0.0" green="0.0" blue="0.78705797697368418" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="batchAddPhotos:" destination="Fhw-w2-GFl" eventType="touchUpInside" id="dHb-YL-vAY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -864,7 +883,7 @@
                             <constraint firstItem="6MK-zf-hxc" firstAttribute="top" secondItem="7je-wP-P8u" secondAttribute="bottom" constant="7.5" id="7wM-2T-JWL"/>
                             <constraint firstAttribute="leadingMargin" secondItem="7je-wP-P8u" secondAttribute="leading" constant="8" id="DZ9-tz-ezb"/>
                             <constraint firstItem="oqz-0p-2lf" firstAttribute="leading" secondItem="F2t-9J-Bi6" secondAttribute="leadingMargin" constant="-8" id="HA9-d7-feY"/>
-                            <constraint firstItem="oqz-0p-2lf" firstAttribute="top" secondItem="6MK-zf-hxc" secondAttribute="bottom" constant="7.5" id="MD0-4D-itI"/>
+                            <constraint firstItem="oqz-0p-2lf" firstAttribute="top" secondItem="6MK-zf-hxc" secondAttribute="bottom" constant="16" id="MD0-4D-itI"/>
                             <constraint firstItem="LWB-hb-BGa" firstAttribute="centerX" secondItem="F2t-9J-Bi6" secondAttribute="centerX" id="uMr-H4-F42"/>
                             <constraint firstItem="6MK-zf-hxc" firstAttribute="leading" secondItem="F2t-9J-Bi6" secondAttribute="leadingMargin" constant="-20" id="uQu-Is-2UN"/>
                             <constraint firstItem="7je-wP-P8u" firstAttribute="top" secondItem="hWf-vB-Lyo" secondAttribute="bottom" constant="8" id="wag-em-za2"/>
